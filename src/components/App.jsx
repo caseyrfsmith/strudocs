@@ -117,42 +117,36 @@ export default function App() {
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Stripe API</div>
-                <div className="text-purple-300 text-sm">Lots of code examples</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://react.dev/reference/react/useState')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">React Docs</div>
-                <div className="text-purple-300 text-sm">Modern structure</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://docs.anthropic.com/en/api/messages')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Anthropic API</div>
-                <div className="text-purple-300 text-sm">Concise and clear</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">MDN Web Docs</div>
-                <div className="text-purple-300 text-sm">Comprehensive reference</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://kubernetes.io/docs/concepts/overview/')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Kubernetes</div>
-                <div className="text-purple-300 text-sm">Complex and detailed</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://strudel.cc/learn/getting-started/')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Strudel Docs</div>
-                <div className="text-purple-300 text-sm">Meta: music docs!</div>
               </button>
             </div>
           </div>

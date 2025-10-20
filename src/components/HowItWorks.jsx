@@ -44,7 +44,6 @@ export default function HowItWorks() {
                 <div className="text-blue-300 font-medium">Heading structure → Musical scale</div>
                 <div className="text-purple-300 mt-1">
                   Good hierarchy (h1 &lt; h2 &lt; h3) = harmonious scales. Flat structure = dissonant scales.
-                  <br/><span className="text-purple-400 text-xs italic">Why? No reason. It just sounds cool.</span>
                 </div>
               </div>
               
@@ -52,7 +51,6 @@ export default function HowItWorks() {
                 <div className="text-green-300 font-medium">Code blocks → Sound texture & rhythm</div>
                 <div className="text-purple-300 mt-1">
                   More code examples = brighter synth tones + fuller drum patterns.
-                  <br/><span className="text-purple-400 text-xs italic">More code blocks = more beep boops.</span>
                 </div>
               </div>
               
@@ -60,7 +58,6 @@ export default function HowItWorks() {
                 <div className="text-red-300 font-medium">Broken links → Glitchy effects</div>
                 <div className="text-purple-300 mt-1">
                   Broken anchor links (#links with no target) add audio distortion and speed randomization.
-                  <br/><span className="text-purple-400 text-xs italic">Broken things sound broken. Makes sense!</span>
                 </div>
               </div>
               
@@ -68,7 +65,6 @@ export default function HowItWorks() {
                 <div className="text-purple-300 font-medium">Link density → Hi-hat layers</div>
                 <div className="text-purple-300 mt-1">
                   Pages with lots of links per 100 words get extra hi-hat percussion layers.
-                  <br/><span className="text-purple-400 text-xs italic">Links = connections = more textures? Sure!</span>
                 </div>
               </div>
 
@@ -76,7 +72,6 @@ export default function HowItWorks() {
                 <div className="text-yellow-300 font-medium">Word count → Speed & chaos</div>
                 <div className="text-purple-300 mt-1">
                   Dense docs play faster. Super long pages (6000+ words) trigger complete sonic chaos.
-                  <br/><span className="text-purple-400 text-xs italic">TL;DR = too loud; didn't relax.</span>
                 </div>
               </div>
             </div>
@@ -105,7 +100,7 @@ export default function HowItWorks() {
             <p className="text-sm">
               Because it's fun! This is a creative exploration of data sonification - turning information into 
               sound. Every documentation page has a unique "fingerprint" of metrics, and translating that into 
-              music creates something playful and unexpected. Plus, Strudel is awesome and more people should know about it.
+              music creates something goofy that makes me smile. Plus, Strudel is awesome and more people should know about it.
             </p>
           </div>
         </div>
