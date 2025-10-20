@@ -11,10 +11,24 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
+  // Check for URL parameter on mount
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlParam = params.get('url');
+    if (urlParam) {
+      handleAnalyze(urlParam);
+    }
+  }, []);
+
   const handleAnalyze = async (url) => {
     setAnalyzing(true);
     setError(null);
     setResult(null);
+
+    // Update URL parameter
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('url', url);
+    window.history.pushState({}, '', newUrl);
 
     try {
       const response = await fetch('/api/analyze', {
@@ -52,6 +66,9 @@ export default function App() {
           </p>
           <p className="text-sm text-purple-300 mb-4">
             Each page creates a unique sonic pattern
+          </p>
+          <p className="text-xs text-purple-400 italic max-w-2xl mx-auto">
+            ⚠️ This is a fun experiment, not a real docs quality analyzer. The "music quality" doesn't mean anything about actual documentation quality!
           </p>
         </div>
 
@@ -100,36 +117,42 @@ export default function App() {
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Stripe API</div>
+                <div className="text-purple-300 text-sm">Lots of code examples</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://react.dev/reference/react/useState')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">React Docs</div>
+                <div className="text-purple-300 text-sm">Modern structure</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://docs.anthropic.com/en/api/messages')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Anthropic API</div>
+                <div className="text-purple-300 text-sm">Concise and clear</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">MDN Web Docs</div>
+                <div className="text-purple-300 text-sm">Comprehensive reference</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://kubernetes.io/docs/concepts/overview/')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Kubernetes</div>
+                <div className="text-purple-300 text-sm">Complex and detailed</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://strudel.cc/learn/getting-started/')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
                 <div className="text-white font-semibold">Strudel Docs</div>
+                <div className="text-purple-300 text-sm">Meta: music docs!</div>
               </button>
             </div>
           </div>
