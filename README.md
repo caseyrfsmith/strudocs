@@ -13,10 +13,12 @@ The music patterns are created using deterministic rules, not AI or machine lear
 ## How it works
 
 1. You paste a documentation URL
-2. Playwright crawler extracts metrics from the page
+2. Server fetches and parses the HTML using Cheerio
 3. Pattern generator maps metrics to Strudel music parameters
 4. Embedded Strudel player loads and plays the generated pattern
 5. Every analysis generates a unique pattern based on that page's specific metrics
+
+**Note:** This works best with static HTML documentation sites. JavaScript-heavy single-page applications may not be fully analyzed since we don't execute JavaScript.
 
 ## Metrics analyzed
 
@@ -76,11 +78,14 @@ The music patterns are created using deterministic rules, not AI or machine lear
 ## Tech stack
 
 - **Frontend** - React, Vite, Tailwind CSS
-- **Crawler** - Playwright for browser automation
-- **Analysis** - Custom metrics extraction in browser context
+- **HTML Parser** - Cheerio for lightweight HTML parsing
 - **Music** - Strudel embedded web component
 - **API** - Express server for local dev, Vercel serverless for production
 - **Deploy** - Vercel
+
+### Why Cheerio instead of a full browser
+
+Originally, this project used Playwright to render pages with a headless browser, but Vercel's serverless environment has strict size and execution limits that make running full browsers impractical. Cheerio is a lightweight HTML parser that works perfectly for analyzing static documentation sites without the overhead of browser automation. The tradeoff is that JavaScript-heavy single-page applications won't be fully analyzed, but most documentation sites are static HTML anyway, making Cheerio the ideal choice for this use case.
 
 ## Installation
 
@@ -91,9 +96,6 @@ cd strudocs
 
 # Install dependencies
 npm install
-
-# Install Playwright browser
-npx playwright install chromium
 ```
 
 ## Development
@@ -129,7 +131,7 @@ strudocs/
 │   │   ├── HowItWorks.jsx       # Explanation accordion
 │   │   └── Footer.jsx           # Footer with links
 │   └── lib/
-│       ├── analyzer.js           # Playwright crawler
+│       ├── analyzer.js           # HTML parser and analyzer
 │       └── patternGenerator.js   # Metrics to music mapping
 ├── api/
 │   └── analyze.js                # Serverless function
@@ -150,7 +152,6 @@ vercel
 ```
 
 Vercel will automatically detect the serverless function in the `api/` directory.
-
 
 ## Why this exists
 
