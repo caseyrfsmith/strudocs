@@ -90,8 +90,7 @@ export default function HowItWorks() {
                 Strudel
               </a>
               , a browser-based live coding environment for music created by Felix Roos. The patterns you hear are 
-              actual code that generates music in real-time using algorithmic patterns and synthesis. It's like 
-              TidalCycles but in JavaScript!
+              actual code that generates music in real-time using algorithmic patterns and synthesis. 
             </p>
           </div>
 
