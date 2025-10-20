@@ -113,10 +113,10 @@ export default function App() {
             <h3 className="text-xl font-bold text-white mb-4">Try these examples</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <button
-                onClick={() => handleAnalyze('https://docs.stripe.com/api/charges')}
+                onClick={() => handleAnalyze('https://posthog.com/docs/error-tracking')}
                 className="text-left p-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
               >
-                <div className="text-white font-semibold">Stripe API</div>
+                <div className="text-white font-semibold">PostHog Error Tracking</div>
               </button>
               <button
                 onClick={() => handleAnalyze('https://react.dev/reference/react/useState')}
